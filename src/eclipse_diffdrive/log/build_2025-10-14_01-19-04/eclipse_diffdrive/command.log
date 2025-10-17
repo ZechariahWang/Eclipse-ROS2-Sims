@@ -1,0 +1,4 @@
+Invoking command in '/home/zech/ros2_ws/src/eclipse_diffdrive/build/eclipse_diffdrive': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/zech/ros2_ws/src/eclipse_diffdrive/build/eclipse_diffdrive -- -j20 -l20
+Invoked command in '/home/zech/ros2_ws/src/eclipse_diffdrive/build/eclipse_diffdrive' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/zech/ros2_ws/src/eclipse_diffdrive/build/eclipse_diffdrive -- -j20 -l20
+Invoking command in '/home/zech/ros2_ws/src/eclipse_diffdrive/build/eclipse_diffdrive': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/zech/ros2_ws/src/eclipse_diffdrive/build/eclipse_diffdrive
+Invoked command in '/home/zech/ros2_ws/src/eclipse_diffdrive/build/eclipse_diffdrive' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/zech/ros2_ws/src/eclipse_diffdrive/build/eclipse_diffdrive

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>eclipse_diffdrive</name>
+  <version>0.0.1</version>
+  <description>4WD differential drive robot simulation</description>
+  <maintainer email="zechariah.wang@uwaterloo.ca">Zechariah Wang</maintainer>
+  <license>MIT</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+  <buildtool_depend>ament_cmake_python</buildtool_depend>
+  <depend>rclcpp</depend>
+  <depend>rclpy</depend>
+  <depend>geometry_msgs</depend>
+  <depend>ros_gz_sim</depend>
+  <depend>ros_gz_bridge</depend>
+  <depend>ros2_control</depend>
+  <depend>ros2_controllers</depend>
+  <depend>xacro</depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>
+

@@ -1,0 +1,10 @@
+diff_drive_controller:
+  type: diff_drive_controller/DiffDriveController
+  ros__parameters:
+    publish_rate: 50.0
+    base_frame_id: base_link
+    left_wheel_names: ["front_left_wheel_joint", "rear_left_wheel_joint"]
+    right_wheel_names: ["front_right_wheel_joint", "rear_right_wheel_joint"]
+    wheel_separation: 0.24
+    wheel_radius: 0.05
+
