@@ -9,41 +9,22 @@ from tf_transformations import euler_from_quaternion
 
 
 class TurnPID(Node):
-    """
-    Turn PID Controller - Rotates the robot to a target heading
-
-    This controller uses odometry to get the current heading and
-    adjusts angular velocity to reach a target angle.
-
-    Use Cases:
-    ----------
-    - Point-turn maneuvers
-    - Heading correction
-    - Precise orientation control
-    - Navigation waypoint alignment
-    """
-
     def __init__(self):
         super().__init__('turn_pid')
 
-        # Declare parameters (can be set via launch file or command line)
         self.declare_parameter('target_angle', 90.0)  # Target angle in degrees
         self.declare_parameter('kp', 1.5)
         self.declare_parameter('ki', 0.01)
         self.declare_parameter('kd', 0.3)
         self.declare_parameter('angle_tolerance', 2.0)  # Degrees
 
-        # Get parameters
         self.target_angle_deg = self.get_parameter('target_angle').value
         self.kp = self.get_parameter('kp').value
         self.ki = self.get_parameter('ki').value
         self.kd = self.get_parameter('kd').value
         self.angle_tolerance = math.radians(self.get_parameter('angle_tolerance').value)
 
-        # Convert target to radians and normalize
         self.target_angle = self.normalize_angle(math.radians(self.target_angle_deg))
-
-        # Publishers and Subscribers
         self.publisher = self.create_publisher(Twist, 'cmd_vel', 10)
         self.odom_subscriber = self.create_subscription(
             Odometry,
@@ -52,11 +33,8 @@ class TurnPID(Node):
             10
         )
 
-        # Control Parameters
-        self.max_angular_speed = 1.5  # rad/s
-        self.min_angular_speed = 0.1  # Minimum speed to overcome friction
-
-        # PID State Variables
+        self.max_angular_speed = 1.5  
+        self.min_angular_speed = 0.1  
         self.current_yaw = None
         self.initial_yaw = None
         self.previous_error = 0.0
@@ -74,12 +52,6 @@ class TurnPID(Node):
         self.get_logger().info(f'PID Gains - Kp: {self.kp}, Ki: {self.ki}, Kd: {self.kd}')
 
     def normalize_angle(self, angle):
-        """
-        Normalize angle to [-pi, pi] range
-
-        This is crucial for handling angle wrapping
-        Example: 370° = 10°, -190° = 170°
-        """
         while angle > math.pi:
             angle -= 2 * math.pi
         while angle < -math.pi:
@@ -87,37 +59,22 @@ class TurnPID(Node):
         return angle
 
     def odom_callback(self, msg):
-        """
-        Extract yaw (heading) from odometry quaternion
-
-        Odometry provides orientation as a quaternion
-        We need to convert it to Euler angles (roll, pitch, yaw)
-        """
         orientation_q = msg.pose.pose.orientation
         orientation_list = [orientation_q.x, orientation_q.y, orientation_q.z, orientation_q.w]
 
-        # Convert quaternion to euler angles
         (_, _, yaw) = euler_from_quaternion(orientation_list)
 
         self.current_yaw = yaw
-
-        # Store initial heading on first callback
         if self.initial_yaw is None:
             self.initial_yaw = yaw
             self.get_logger().info(f'Initial heading: {math.degrees(yaw):.2f}°')
 
     def control_loop(self):
-        """
-        Main PID control loop for turning
-
-        The controller calculates the shortest angular path to the target
-        """
         if self.current_yaw is None:
             self.get_logger().warn('No odometry data available', throttle_duration_sec=2.0)
             return
 
         if self.goal_reached:
-            # Goal already reached, stay stopped
             return
 
         # Calculate time delta
@@ -128,11 +85,6 @@ class TurnPID(Node):
         if dt <= 0:
             return
 
-        # ===== PID CALCULATION =====
-
-        # 1. Calculate error (shortest angular distance to target)
-        # This handles angle wrapping correctly
-        # Example: current=170°, target=-170° → error=20° (not 340°!)
         error = self.normalize_angle(self.target_angle - self.current_yaw)
 
         # 2. Check if goal is reached
@@ -147,42 +99,29 @@ class TurnPID(Node):
                 self.publisher.publish(msg)
             return
 
-        # 3. Proportional term
         p_term = self.kp * error
-
-        # 4. Integral term (with anti-windup)
         self.integral += error * dt
-        # Limit integral to prevent windup
         max_integral = 0.5
         self.integral = max(-max_integral, min(max_integral, self.integral))
         i_term = self.ki * self.integral
-
-        # 5. Derivative term
         derivative = (error - self.previous_error) / dt
         d_term = self.kd * derivative
-
-        # 6. Calculate control output
         angular_velocity = p_term + i_term + d_term
 
-        # Apply speed limits
         angular_velocity = max(-self.max_angular_speed,
                              min(self.max_angular_speed, angular_velocity))
 
-        # Apply minimum speed (to overcome static friction)
+
         if abs(angular_velocity) < self.min_angular_speed:
             angular_velocity = math.copysign(self.min_angular_speed, angular_velocity)
 
-        # Store error for next iteration
         self.previous_error = error
 
-        # ===== PUBLISH COMMAND =====
         msg = Twist()
-        msg.linear.x = 0.0  # No forward movement during turn
+        msg.linear.x = 0.0  
         msg.angular.z = angular_velocity
 
         self.publisher.publish(msg)
-
-        # Logging
         self.get_logger().info(
             f'Current: {math.degrees(self.current_yaw):6.2f}° | '
             f'Target: {math.degrees(self.target_angle):6.2f}° | '
@@ -192,10 +131,8 @@ class TurnPID(Node):
             throttle_duration_sec=0.5
         )
 
-
 def main(args=None):
     rclpy.init(args=args)
-
     turn_pid_node = TurnPID()
 
     try:
