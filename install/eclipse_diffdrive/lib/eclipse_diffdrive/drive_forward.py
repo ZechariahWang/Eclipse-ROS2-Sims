@@ -9,15 +9,9 @@ class DriveForward(Node):
     def __init__(self):
         super().__init__('drive_forward')
 
-        # Create publisher for cmd_vel topic
         self.publisher_ = self.create_publisher(Twist, 'cmd_vel', 10)
-
-        # Create timer to publish at 10 Hz
         self.timer = self.create_timer(0.1, self.timer_callback)
-
-        # Set forward velocity (m/s)
         self.linear_velocity = 0.5
-
         self.get_logger().info('Drive Forward node started - Robot moving forward at 0.5 m/s')
 
     def timer_callback(self):

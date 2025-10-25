@@ -1,0 +1,40 @@
+-- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)
+-- Found xacro: 2.1.1 (/opt/ros/humble/share/xacro/cmake)
+-- Found rclpy: 3.3.17 (/opt/ros/humble/share/rclpy/cmake)
+-- Found geometry_msgs: 4.9.0 (/opt/ros/humble/share/geometry_msgs/cmake)
+-- Found rosidl_generator_c: 3.1.7 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+-- Found rosidl_adapter: 3.1.7 (/opt/ros/humble/share/rosidl_adapter/cmake)
+-- Found rosidl_generator_cpp: 3.1.7 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/zech/ros2_ws/build/eclipse_diffdrive
+-- Install configuration: ""
+-- Up-to-date: /home/zech/ros2_ws/install/eclipse_diffdrive/share/eclipse_diffdrive/launch
+-- Up-to-date: /home/zech/ros2_ws/install/eclipse_diffdrive/share/eclipse_diffdrive/launch/sim.launch.py
+-- Up-to-date: /home/zech/ros2_ws/install/eclipse_diffdrive/share/eclipse_diffdrive/urdf
+-- Installing: /home/zech/ros2_ws/install/eclipse_diffdrive/share/eclipse_diffdrive/urdf/eclipse_diffdrive.urdf
+-- Up-to-date: /home/zech/ros2_ws/install/eclipse_diffdrive/share/eclipse_diffdrive/urdf/eclipse_diffdrive.urdf.xacro
+-- Up-to-date: /home/zech/ros2_ws/install/eclipse_diffdrive/share/eclipse_diffdrive/config
+-- Up-to-date: /home/zech/ros2_ws/install/eclipse_diffdrive/share/eclipse_diffdrive/config/diffdrive_controller.yaml
+-- Up-to-date: /home/zech/ros2_ws/install/eclipse_diffdrive/share/eclipse_diffdrive/worlds
+-- Up-to-date: /home/zech/ros2_ws/install/eclipse_diffdrive/share/eclipse_diffdrive/worlds/empty.world.sdf
+-- Installing: /home/zech/ros2_ws/install/eclipse_diffdrive/lib/eclipse_diffdrive/drive_forward.py
+-- Installing: /home/zech/ros2_ws/install/eclipse_diffdrive/lib/eclipse_diffdrive/lateral_pid.py
+-- Installing: /home/zech/ros2_ws/install/eclipse_diffdrive/lib/eclipse_diffdrive/turn_pid.py
+-- Installing: /home/zech/ros2_ws/install/eclipse_diffdrive/share/ament_index/resource_index/package_run_dependencies/eclipse_diffdrive
+-- Up-to-date: /home/zech/ros2_ws/install/eclipse_diffdrive/share/ament_index/resource_index/parent_prefix_path/eclipse_diffdrive
+-- Up-to-date: /home/zech/ros2_ws/install/eclipse_diffdrive/share/eclipse_diffdrive/environment/ament_prefix_path.sh
+-- Installing: /home/zech/ros2_ws/install/eclipse_diffdrive/share/eclipse_diffdrive/environment/ament_prefix_path.dsv
+-- Up-to-date: /home/zech/ros2_ws/install/eclipse_diffdrive/share/eclipse_diffdrive/environment/path.sh
+-- Installing: /home/zech/ros2_ws/install/eclipse_diffdrive/share/eclipse_diffdrive/environment/path.dsv
+-- Up-to-date: /home/zech/ros2_ws/install/eclipse_diffdrive/share/eclipse_diffdrive/local_setup.bash
+-- Up-to-date: /home/zech/ros2_ws/install/eclipse_diffdrive/share/eclipse_diffdrive/local_setup.sh
+-- Up-to-date: /home/zech/ros2_ws/install/eclipse_diffdrive/share/eclipse_diffdrive/local_setup.zsh
+-- Installing: /home/zech/ros2_ws/install/eclipse_diffdrive/share/eclipse_diffdrive/local_setup.dsv
+-- Installing: /home/zech/ros2_ws/install/eclipse_diffdrive/share/eclipse_diffdrive/package.dsv
+-- Up-to-date: /home/zech/ros2_ws/install/eclipse_diffdrive/share/ament_index/resource_index/packages/eclipse_diffdrive
+-- Up-to-date: /home/zech/ros2_ws/install/eclipse_diffdrive/share/eclipse_diffdrive/cmake/eclipse_diffdriveConfig.cmake
+-- Up-to-date: /home/zech/ros2_ws/install/eclipse_diffdrive/share/eclipse_diffdrive/cmake/eclipse_diffdriveConfig-version.cmake
+-- Installing: /home/zech/ros2_ws/install/eclipse_diffdrive/share/eclipse_diffdrive/package.xml

@@ -48,7 +48,7 @@
 			{
 				"command" : 5,
 				"file" : 0,
-				"line" : 20,
+				"line" : 23,
 				"parent" : 0
 			},
 			{
@@ -248,7 +248,10 @@
 			"destination" : "lib/eclipse_diffdrive",
 			"paths" : 
 			[
-				"src/drive_forward.py"
+				"src/drive_forward.py",
+				"src/lateral_pid.py",
+				"src/move_to_point.py",
+				"src/turn_pid.py"
 			],
 			"type" : "file"
 		},

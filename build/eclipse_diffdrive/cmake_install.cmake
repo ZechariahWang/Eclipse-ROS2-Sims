@@ -52,7 +52,12 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/eclipse_diffdrive" TYPE PROGRAM FILES "/home/zech/ros2_ws/src/eclipse_diffdrive/src/drive_forward.py")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/eclipse_diffdrive" TYPE PROGRAM FILES
+    "/home/zech/ros2_ws/src/eclipse_diffdrive/src/drive_forward.py"
+    "/home/zech/ros2_ws/src/eclipse_diffdrive/src/lateral_pid.py"
+    "/home/zech/ros2_ws/src/eclipse_diffdrive/src/move_to_point.py"
+    "/home/zech/ros2_ws/src/eclipse_diffdrive/src/turn_pid.py"
+    )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)

@@ -4,6 +4,9 @@
 /home/zech/ros2_ws/install/eclipse_diffdrive/share/eclipse_diffdrive/config/diffdrive_controller.yaml
 /home/zech/ros2_ws/install/eclipse_diffdrive/share/eclipse_diffdrive/worlds/empty.world.sdf
 /home/zech/ros2_ws/install/eclipse_diffdrive/lib/eclipse_diffdrive/drive_forward.py
+/home/zech/ros2_ws/install/eclipse_diffdrive/lib/eclipse_diffdrive/lateral_pid.py
+/home/zech/ros2_ws/install/eclipse_diffdrive/lib/eclipse_diffdrive/move_to_point.py
+/home/zech/ros2_ws/install/eclipse_diffdrive/lib/eclipse_diffdrive/turn_pid.py
 /home/zech/ros2_ws/install/eclipse_diffdrive/share/ament_index/resource_index/package_run_dependencies/eclipse_diffdrive
 /home/zech/ros2_ws/install/eclipse_diffdrive/share/ament_index/resource_index/parent_prefix_path/eclipse_diffdrive
 /home/zech/ros2_ws/install/eclipse_diffdrive/share/eclipse_diffdrive/environment/ament_prefix_path.sh

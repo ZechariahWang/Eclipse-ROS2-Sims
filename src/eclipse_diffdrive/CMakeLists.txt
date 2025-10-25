@@ -14,6 +14,9 @@ install(DIRECTORY launch urdf config worlds
 # Install Python scripts
 install(PROGRAMS
   src/drive_forward.py
+  src/lateral_pid.py
+  src/move_to_point.py
+  src/turn_pid.py
   DESTINATION lib/${PROJECT_NAME}
 )
 
