@@ -17,6 +17,7 @@ install(PROGRAMS
   src/lateral_pid.py
   src/move_to_point.py
   src/turn_pid.py
+  src/pure_pursuit.py
   DESTINATION lib/${PROJECT_NAME}
 )
 
