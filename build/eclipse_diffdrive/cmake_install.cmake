@@ -57,6 +57,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
     "/home/zech/ros2_ws/src/eclipse_diffdrive/src/lateral_pid.py"
     "/home/zech/ros2_ws/src/eclipse_diffdrive/src/move_to_point.py"
     "/home/zech/ros2_ws/src/eclipse_diffdrive/src/turn_pid.py"
+    "/home/zech/ros2_ws/src/eclipse_diffdrive/src/pure_pursuit.py"
     )
 endif()
 

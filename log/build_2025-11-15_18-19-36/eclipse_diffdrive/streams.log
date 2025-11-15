@@ -1,0 +1,46 @@
+[0.008s] Invoking command in '/home/zech/ros2_ws/build/eclipse_diffdrive': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/zech/ros2_ws/build/eclipse_diffdrive -- -j20 -l20
+[0.036s] -- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.130s] -- Found xacro: 2.1.1 (/opt/ros/humble/share/xacro/cmake)
+[0.130s] -- Found rclpy: 3.3.17 (/opt/ros/humble/share/rclpy/cmake)
+[0.131s] -- Found geometry_msgs: 4.9.0 (/opt/ros/humble/share/geometry_msgs/cmake)
+[0.151s] -- Found rosidl_generator_c: 3.1.7 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.153s] -- Found rosidl_adapter: 3.1.7 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.157s] -- Found rosidl_generator_cpp: 3.1.7 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.164s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.173s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.234s] -- Configuring done
+[0.236s] -- Generating done
+[0.237s] -- Build files have been written to: /home/zech/ros2_ws/build/eclipse_diffdrive
+[0.256s] Invoked command in '/home/zech/ros2_ws/build/eclipse_diffdrive' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/zech/ros2_ws/build/eclipse_diffdrive -- -j20 -l20
+[0.262s] Invoking command in '/home/zech/ros2_ws/build/eclipse_diffdrive': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/zech/ros2_ws/build/eclipse_diffdrive
+[0.266s] -- Install configuration: ""
+[0.266s] -- Up-to-date: /home/zech/ros2_ws/install/eclipse_diffdrive/share/eclipse_diffdrive/launch
+[0.266s] -- Up-to-date: /home/zech/ros2_ws/install/eclipse_diffdrive/share/eclipse_diffdrive/launch/sim.launch.py
+[0.267s] -- Up-to-date: /home/zech/ros2_ws/install/eclipse_diffdrive/share/eclipse_diffdrive/urdf
+[0.267s] -- Installing: /home/zech/ros2_ws/install/eclipse_diffdrive/share/eclipse_diffdrive/urdf/eclipse_diffdrive.urdf
+[0.267s] -- Up-to-date: /home/zech/ros2_ws/install/eclipse_diffdrive/share/eclipse_diffdrive/urdf/eclipse_diffdrive.urdf.xacro
+[0.267s] -- Up-to-date: /home/zech/ros2_ws/install/eclipse_diffdrive/share/eclipse_diffdrive/config
+[0.267s] -- Up-to-date: /home/zech/ros2_ws/install/eclipse_diffdrive/share/eclipse_diffdrive/config/diffdrive_controller.yaml
+[0.267s] -- Up-to-date: /home/zech/ros2_ws/install/eclipse_diffdrive/share/eclipse_diffdrive/worlds
+[0.267s] -- Up-to-date: /home/zech/ros2_ws/install/eclipse_diffdrive/share/eclipse_diffdrive/worlds/empty.world.sdf
+[0.267s] -- Up-to-date: /home/zech/ros2_ws/install/eclipse_diffdrive/lib/eclipse_diffdrive/drive_forward.py
+[0.267s] -- Up-to-date: /home/zech/ros2_ws/install/eclipse_diffdrive/lib/eclipse_diffdrive/lateral_pid.py
+[0.267s] -- Up-to-date: /home/zech/ros2_ws/install/eclipse_diffdrive/lib/eclipse_diffdrive/move_to_point.py
+[0.267s] -- Up-to-date: /home/zech/ros2_ws/install/eclipse_diffdrive/lib/eclipse_diffdrive/turn_pid.py
+[0.267s] -- Installing: /home/zech/ros2_ws/install/eclipse_diffdrive/lib/eclipse_diffdrive/pure_pursuit.py
+[0.267s] -- Up-to-date: /home/zech/ros2_ws/install/eclipse_diffdrive/share/ament_index/resource_index/package_run_dependencies/eclipse_diffdrive
+[0.267s] -- Up-to-date: /home/zech/ros2_ws/install/eclipse_diffdrive/share/ament_index/resource_index/parent_prefix_path/eclipse_diffdrive
+[0.267s] -- Up-to-date: /home/zech/ros2_ws/install/eclipse_diffdrive/share/eclipse_diffdrive/environment/ament_prefix_path.sh
+[0.268s] -- Installing: /home/zech/ros2_ws/install/eclipse_diffdrive/share/eclipse_diffdrive/environment/ament_prefix_path.dsv
+[0.268s] -- Up-to-date: /home/zech/ros2_ws/install/eclipse_diffdrive/share/eclipse_diffdrive/environment/path.sh
+[0.268s] -- Installing: /home/zech/ros2_ws/install/eclipse_diffdrive/share/eclipse_diffdrive/environment/path.dsv
+[0.268s] -- Up-to-date: /home/zech/ros2_ws/install/eclipse_diffdrive/share/eclipse_diffdrive/local_setup.bash
+[0.268s] -- Up-to-date: /home/zech/ros2_ws/install/eclipse_diffdrive/share/eclipse_diffdrive/local_setup.sh
+[0.268s] -- Up-to-date: /home/zech/ros2_ws/install/eclipse_diffdrive/share/eclipse_diffdrive/local_setup.zsh
+[0.268s] -- Installing: /home/zech/ros2_ws/install/eclipse_diffdrive/share/eclipse_diffdrive/local_setup.dsv
+[0.268s] -- Installing: /home/zech/ros2_ws/install/eclipse_diffdrive/share/eclipse_diffdrive/package.dsv
+[0.268s] -- Up-to-date: /home/zech/ros2_ws/install/eclipse_diffdrive/share/ament_index/resource_index/packages/eclipse_diffdrive
+[0.268s] -- Up-to-date: /home/zech/ros2_ws/install/eclipse_diffdrive/share/eclipse_diffdrive/cmake/eclipse_diffdriveConfig.cmake
+[0.268s] -- Up-to-date: /home/zech/ros2_ws/install/eclipse_diffdrive/share/eclipse_diffdrive/cmake/eclipse_diffdriveConfig-version.cmake
+[0.268s] -- Up-to-date: /home/zech/ros2_ws/install/eclipse_diffdrive/share/eclipse_diffdrive/package.xml
+[0.269s] Invoked command in '/home/zech/ros2_ws/build/eclipse_diffdrive' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/zech/ros2_ws/build/eclipse_diffdrive

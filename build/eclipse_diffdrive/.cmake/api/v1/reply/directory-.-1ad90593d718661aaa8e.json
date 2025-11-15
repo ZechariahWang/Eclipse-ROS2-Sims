@@ -48,7 +48,7 @@
 			{
 				"command" : 5,
 				"file" : 0,
-				"line" : 23,
+				"line" : 24,
 				"parent" : 0
 			},
 			{
@@ -251,7 +251,8 @@
 				"src/drive_forward.py",
 				"src/lateral_pid.py",
 				"src/move_to_point.py",
-				"src/turn_pid.py"
+				"src/turn_pid.py",
+				"src/pure_pursuit.py"
 			],
 			"type" : "file"
 		},
