@@ -1,0 +1,8 @@
+source;share/eclipse_ackermann/hook/cmake_prefix_path.ps1
+source;share/eclipse_ackermann/hook/cmake_prefix_path.dsv
+source;share/eclipse_ackermann/hook/cmake_prefix_path.sh
+source;share/eclipse_ackermann/local_setup.bash
+source;share/eclipse_ackermann/local_setup.dsv
+source;share/eclipse_ackermann/local_setup.ps1
+source;share/eclipse_ackermann/local_setup.sh
+source;share/eclipse_ackermann/local_setup.zsh

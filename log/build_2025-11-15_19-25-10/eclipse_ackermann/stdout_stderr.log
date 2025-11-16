@@ -1,0 +1,25 @@
+-- Install configuration: ""
+-- Up-to-date: /home/zech/ros2_ws/install/eclipse_ackermann/share/eclipse_ackermann/launch
+-- Up-to-date: /home/zech/ros2_ws/install/eclipse_ackermann/share/eclipse_ackermann/launch/sim.launch.py
+-- Up-to-date: /home/zech/ros2_ws/install/eclipse_ackermann/share/eclipse_ackermann/urdf
+-- Up-to-date: /home/zech/ros2_ws/install/eclipse_ackermann/share/eclipse_ackermann/urdf/eclipse_ackermann.urdf.xacro
+-- Up-to-date: /home/zech/ros2_ws/install/eclipse_ackermann/share/eclipse_ackermann/config
+-- Up-to-date: /home/zech/ros2_ws/install/eclipse_ackermann/share/eclipse_ackermann/worlds
+-- Up-to-date: /home/zech/ros2_ws/install/eclipse_ackermann/share/eclipse_ackermann/worlds/empty.world.sdf
+-- Up-to-date: /home/zech/ros2_ws/install/eclipse_ackermann/lib/eclipse_ackermann/pure_pursuit_ackermann.py
+-- Up-to-date: /home/zech/ros2_ws/install/eclipse_ackermann/lib/eclipse_ackermann/pose_to_odom.py
+-- Up-to-date: /home/zech/ros2_ws/install/eclipse_ackermann/share/ament_index/resource_index/package_run_dependencies/eclipse_ackermann
+-- Up-to-date: /home/zech/ros2_ws/install/eclipse_ackermann/share/ament_index/resource_index/parent_prefix_path/eclipse_ackermann
+-- Up-to-date: /home/zech/ros2_ws/install/eclipse_ackermann/share/eclipse_ackermann/environment/ament_prefix_path.sh
+-- Up-to-date: /home/zech/ros2_ws/install/eclipse_ackermann/share/eclipse_ackermann/environment/ament_prefix_path.dsv
+-- Up-to-date: /home/zech/ros2_ws/install/eclipse_ackermann/share/eclipse_ackermann/environment/path.sh
+-- Up-to-date: /home/zech/ros2_ws/install/eclipse_ackermann/share/eclipse_ackermann/environment/path.dsv
+-- Up-to-date: /home/zech/ros2_ws/install/eclipse_ackermann/share/eclipse_ackermann/local_setup.bash
+-- Up-to-date: /home/zech/ros2_ws/install/eclipse_ackermann/share/eclipse_ackermann/local_setup.sh
+-- Up-to-date: /home/zech/ros2_ws/install/eclipse_ackermann/share/eclipse_ackermann/local_setup.zsh
+-- Up-to-date: /home/zech/ros2_ws/install/eclipse_ackermann/share/eclipse_ackermann/local_setup.dsv
+-- Up-to-date: /home/zech/ros2_ws/install/eclipse_ackermann/share/eclipse_ackermann/package.dsv
+-- Up-to-date: /home/zech/ros2_ws/install/eclipse_ackermann/share/ament_index/resource_index/packages/eclipse_ackermann
+-- Up-to-date: /home/zech/ros2_ws/install/eclipse_ackermann/share/eclipse_ackermann/cmake/eclipse_ackermannConfig.cmake
+-- Up-to-date: /home/zech/ros2_ws/install/eclipse_ackermann/share/eclipse_ackermann/cmake/eclipse_ackermannConfig-version.cmake
+-- Up-to-date: /home/zech/ros2_ws/install/eclipse_ackermann/share/eclipse_ackermann/package.xml

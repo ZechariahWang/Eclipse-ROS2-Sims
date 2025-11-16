@@ -1,0 +1,315 @@
+<?xml version="1.0"?>
+<robot name="eclipse_ackermann_bot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!-- ===== PARAMETERS ===== -->
+  <xacro:property name="wheelbase" value="0.3"/>
+  <xacro:property name="track_width" value="0.25"/>
+  <xacro:property name="wheel_radius" value="0.05"/>
+  <xacro:property name="wheel_thickness" value="0.03"/>
+  <xacro:property name="max_steer_angle" value="0.6"/>
+
+  <!-- ===== BASE LINK ===== -->
+  <link name="base_link">
+    <visual>
+      <geometry><box size="0.4 0.25 0.1"/></geometry>
+      <material name="blue"><color rgba="0.0 0.3 1.0 1.0"/></material>
+    </visual>
+    <collision>
+      <geometry><box size="0.4 0.25 0.1"/></geometry>
+    </collision>
+    <inertial>
+      <mass value="5.0"/>
+      <inertia ixx="0.05" iyy="0.05" izz="0.05" ixy="0" ixz="0" iyz="0"/>
+    </inertial>
+  </link>
+
+  <!-- ===== REAR WHEELS (Fixed, driven) ===== -->
+  <xacro:macro name="rear_wheel" params="name y_offset">
+    <link name="${name}">
+      <visual>
+        <geometry><cylinder length="${wheel_thickness}" radius="${wheel_radius}"/></geometry>
+        <material name="black"><color rgba="0 0 0 1"/></material>
+        <origin rpy="1.5708 0 0" xyz="0 0 0"/>
+      </visual>
+      <collision>
+        <geometry><cylinder length="${wheel_thickness}" radius="${wheel_radius}"/></geometry>
+        <origin rpy="1.5708 0 0" xyz="0 0 0"/>
+      </collision>
+      <inertial>
+        <mass value="0.5"/>
+        <inertia ixx="0.001" iyy="0.001" izz="0.0005" ixy="0" ixz="0" iyz="0"/>
+      </inertial>
+    </link>
+
+    <joint name="${name}_joint" type="continuous">
+      <parent link="base_link"/>
+      <child link="${name}"/>
+      <origin xyz="${-wheelbase/2} ${y_offset} 0" rpy="0 0 0"/>
+      <axis xyz="0 1 0"/>
+    </joint>
+
+    <gazebo reference="${name}">
+      <mu1>1.2</mu1>
+      <mu2>1.2</mu2>
+      <kp>1000000.0</kp>
+      <kd>100.0</kd>
+      <minDepth>0.001</minDepth>
+      <maxVel>1.0</maxVel>
+    </gazebo>
+  </xacro:macro>
+
+  <xacro:rear_wheel name="rear_left_wheel" y_offset="${track_width/2}"/>
+  <xacro:rear_wheel name="rear_right_wheel" y_offset="${-track_width/2}"/>
+
+  <!-- ===== FRONT WHEELS (Steerable) ===== -->
+  <xacro:macro name="front_wheel" params="name y_offset">
+    <!-- Steering link -->
+    <link name="${name}_steering_link">
+      <inertial>
+        <mass value="0.01"/>
+        <inertia ixx="0.00001" iyy="0.00001" izz="0.00001" ixy="0" ixz="0" iyz="0"/>
+      </inertial>
+    </link>
+
+    <!-- Steering joint -->
+    <joint name="${name}_steering_joint" type="revolute">
+      <parent link="base_link"/>
+      <child link="${name}_steering_link"/>
+      <origin xyz="${wheelbase/2} ${y_offset} 0" rpy="0 0 0"/>
+      <axis xyz="0 0 1"/>
+      <limit lower="${-max_steer_angle}" upper="${max_steer_angle}" effort="100" velocity="10"/>
+    </joint>
+
+    <!-- Wheel link -->
+    <link name="${name}">
+      <visual>
+        <geometry><cylinder length="${wheel_thickness}" radius="${wheel_radius}"/></geometry>
+        <material name="black"><color rgba="0 0 0 1"/></material>
+        <origin rpy="1.5708 0 0" xyz="0 0 0"/>
+      </visual>
+      <collision>
+        <geometry><cylinder length="${wheel_thickness}" radius="${wheel_radius}"/></geometry>
+        <origin rpy="1.5708 0 0" xyz="0 0 0"/>
+      </collision>
+      <inertial>
+        <mass value="0.5"/>
+        <inertia ixx="0.001" iyy="0.001" izz="0.0005" ixy="0" ixz="0" iyz="0"/>
+      </inertial>
+    </link>
+
+    <!-- Wheel joint -->
+    <joint name="${name}_joint" type="continuous">
+      <parent link="${name}_steering_link"/>
+      <child link="${name}"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <axis xyz="0 1 0"/>
+    </joint>
+
+    <gazebo reference="${name}">
+      <mu1>1.2</mu1>
+      <mu2>1.2</mu2>
+      <kp>1000000.0</kp>
+      <kd>100.0</kd>
+      <minDepth>0.001</minDepth>
+      <maxVel>1.0</maxVel>
+    </gazebo>
+  </xacro:macro>
+
+  <xacro:front_wheel name="front_left_wheel" y_offset="${track_width/2}"/>
+  <xacro:front_wheel name="front_right_wheel" y_offset="${-track_width/2}"/>
+
+  <!-- ===== LIDAR LINK ===== -->
+  <link name="lidar_link">
+    <visual>
+      <geometry><cylinder length="0.05" radius="0.03"/></geometry>
+      <material name="gray"><color rgba="0.8 0.8 0.8 1.0"/></material>
+    </visual>
+    <collision>
+      <geometry><cylinder length="0.05" radius="0.03"/></geometry>
+    </collision>
+    <inertial>
+      <mass value="0.05"/>
+      <inertia ixx="0.0001" iyy="0.0001" izz="0.0001" ixy="0" ixz="0" iyz="0"/>
+    </inertial>
+  </link>
+
+  <joint name="lidar_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="lidar_link"/>
+    <origin xyz="0 0 0.1" rpy="0 0 0"/>
+  </joint>
+
+  <!-- ===== IMU LINK ===== -->
+  <link name="imu_link">
+    <inertial>
+      <mass value="0.01"/>
+      <inertia ixx="0.00001" iyy="0.00001" izz="0.00001" ixy="0" ixz="0" iyz="0"/>
+    </inertial>
+  </link>
+
+  <joint name="imu_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="imu_link"/>
+    <origin xyz="0 0 0.05" rpy="0 0 0"/>
+  </joint>
+
+  <!-- ===== JOINT STATE PUBLISHER ===== -->
+  <gazebo>
+    <plugin filename="gz-sim-joint-state-publisher-system" name="gz::sim::systems::JointStatePublisher">
+      <topic>joint_states</topic>
+    </plugin>
+  </gazebo>
+
+  <!-- ===== VELOCITY CONTROL FOR REAR WHEELS ===== -->
+  <gazebo>
+    <plugin filename="gz-sim-joint-controller-system" name="gz::sim::systems::JointController">
+      <joint_name>rear_left_wheel_joint</joint_name>
+      <topic>rear_left_wheel/cmd_vel</topic>
+      <p_gain>1.0</p_gain>
+      <i_gain>0.1</i_gain>
+      <d_gain>0.01</d_gain>
+      <i_max>1.0</i_max>
+      <i_min>-1.0</i_min>
+      <cmd_max>100.0</cmd_max>
+      <cmd_min>-100.0</cmd_min>
+    </plugin>
+  </gazebo>
+
+  <gazebo>
+    <plugin filename="gz-sim-joint-controller-system" name="gz::sim::systems::JointController">
+      <joint_name>rear_right_wheel_joint</joint_name>
+      <topic>rear_right_wheel/cmd_vel</topic>
+      <p_gain>1.0</p_gain>
+      <i_gain>0.1</i_gain>
+      <d_gain>0.01</d_gain>
+      <i_max>1.0</i_max>
+      <i_min>-1.0</i_min>
+      <cmd_max>100.0</cmd_max>
+      <cmd_min>-100.0</cmd_min>
+    </plugin>
+  </gazebo>
+
+  <!-- ===== POSITION CONTROL FOR STEERING ===== -->
+  <gazebo>
+    <plugin filename="gz-sim-joint-position-controller-system" name="gz::sim::systems::JointPositionController">
+      <joint_name>front_left_wheel_steering_joint</joint_name>
+      <topic>front_left_steering/cmd_pos</topic>
+      <p_gain>10.0</p_gain>
+      <i_gain>0.1</i_gain>
+      <d_gain>0.5</d_gain>
+      <i_max>1.0</i_max>
+      <i_min>-1.0</i_min>
+      <cmd_max>100.0</cmd_max>
+      <cmd_min>-100.0</cmd_min>
+    </plugin>
+  </gazebo>
+
+  <gazebo>
+    <plugin filename="gz-sim-joint-position-controller-system" name="gz::sim::systems::JointPositionController">
+      <joint_name>front_right_wheel_steering_joint</joint_name>
+      <topic>front_right_steering/cmd_pos</topic>
+      <p_gain>10.0</p_gain>
+      <i_gain>0.1</i_gain>
+      <d_gain>0.5</d_gain>
+      <i_max>1.0</i_max>
+      <i_min>-1.0</i_min>
+      <cmd_max>100.0</cmd_max>
+      <cmd_min>-100.0</cmd_min>
+    </plugin>
+  </gazebo>
+
+  <!-- ===== POSE PUBLISHER (for odometry) ===== -->
+  <gazebo>
+    <plugin filename="libignition-gazebo-pose-publisher-system.so" name="ignition::gazebo::systems::PosePublisher">
+      <publish_link_pose>true</publish_link_pose>
+      <publish_sensor_pose>false</publish_sensor_pose>
+      <publish_collision_pose>false</publish_collision_pose>
+      <publish_visual_pose>false</publish_visual_pose>
+      <publish_nested_model_pose>false</publish_nested_model_pose>
+      <update_frequency>50</update_frequency>
+    </plugin>
+  </gazebo>
+
+  <!-- ===== LIDAR SENSOR ===== -->
+  <gazebo reference="lidar_link">
+    <sensor name="lidar_sensor" type="gpu_lidar">
+      <always_on>true</always_on>
+      <update_rate>10</update_rate>
+      <visualize>true</visualize>
+      <pose>0 0 0 0 0 0</pose>
+      <topic>scan</topic>
+      <ray>
+        <scan>
+          <horizontal>
+            <samples>720</samples>
+            <resolution>1</resolution>
+            <min_angle>-1.5708</min_angle>
+            <max_angle>1.5708</max_angle>
+          </horizontal>
+        </scan>
+        <range>
+          <min>0.12</min>
+          <max>5.0</max>
+          <resolution>0.01</resolution>
+        </range>
+        <noise>
+          <type>gaussian</type>
+          <stddev>0.01</stddev>
+        </noise>
+      </ray>
+      <plugin name="gz::sim::systems::Sensors" filename="gz-sim-sensors-system"/>
+    </sensor>
+  </gazebo>
+
+  <!-- ===== IMU SENSOR ===== -->
+  <gazebo reference="imu_link">
+    <sensor name="imu_sensor" type="imu">
+      <always_on>true</always_on>
+      <update_rate>100</update_rate>
+      <topic>imu</topic>
+      <imu>
+        <angular_velocity>
+          <x>
+            <noise type="gaussian">
+              <mean>0.0</mean>
+              <stddev>0.01</stddev>
+            </noise>
+          </x>
+          <y>
+            <noise type="gaussian">
+              <mean>0.0</mean>
+              <stddev>0.01</stddev>
+            </noise>
+          </y>
+          <z>
+            <noise type="gaussian">
+              <mean>0.0</mean>
+              <stddev>0.01</stddev>
+            </noise>
+          </z>
+        </angular_velocity>
+        <linear_acceleration>
+          <x>
+            <noise type="gaussian">
+              <mean>0.0</mean>
+              <stddev>0.1</stddev>
+            </noise>
+          </x>
+          <y>
+            <noise type="gaussian">
+              <mean>0.0</mean>
+              <stddev>0.1</stddev>
+            </noise>
+          </y>
+          <z>
+            <noise type="gaussian">
+              <mean>0.0</mean>
+              <stddev>0.1</stddev>
+            </noise>
+          </z>
+        </linear_acceleration>
+      </imu>
+    </sensor>
+  </gazebo>
+
+</robot>

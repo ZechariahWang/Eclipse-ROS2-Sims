@@ -1,0 +1,6 @@
+Invoking command in '/home/zech/ros2_ws/build/eclipse_ackermann': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/zech/ros2_ws/src/eclipse_ackermann -DCMAKE_INSTALL_PREFIX=/home/zech/ros2_ws/install/eclipse_ackermann
+Invoked command in '/home/zech/ros2_ws/build/eclipse_ackermann' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/zech/ros2_ws/src/eclipse_ackermann -DCMAKE_INSTALL_PREFIX=/home/zech/ros2_ws/install/eclipse_ackermann
+Invoking command in '/home/zech/ros2_ws/build/eclipse_ackermann': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/zech/ros2_ws/build/eclipse_ackermann -- -j20 -l20
+Invoked command in '/home/zech/ros2_ws/build/eclipse_ackermann' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/zech/ros2_ws/build/eclipse_ackermann -- -j20 -l20
+Invoking command in '/home/zech/ros2_ws/build/eclipse_ackermann': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/zech/ros2_ws/build/eclipse_ackermann
+Invoked command in '/home/zech/ros2_ws/build/eclipse_ackermann' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/zech/ros2_ws/build/eclipse_ackermann

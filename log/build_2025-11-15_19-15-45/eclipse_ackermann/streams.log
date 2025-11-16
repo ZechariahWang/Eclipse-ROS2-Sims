@@ -1,0 +1,42 @@
+[0.007s] Invoking command in '/home/zech/ros2_ws/build/eclipse_ackermann': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/zech/ros2_ws/build/eclipse_ackermann -- -j20 -l20
+[0.025s] -- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.120s] -- Found xacro: 2.1.1 (/opt/ros/humble/share/xacro/cmake)
+[0.121s] -- Found rclpy: 3.3.17 (/opt/ros/humble/share/rclpy/cmake)
+[0.121s] -- Found geometry_msgs: 4.9.0 (/opt/ros/humble/share/geometry_msgs/cmake)
+[0.133s] -- Found rosidl_generator_c: 3.1.7 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.135s] -- Found rosidl_adapter: 3.1.7 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.138s] -- Found rosidl_generator_cpp: 3.1.7 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.142s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.148s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.166s] -- Found ackermann_msgs: 2.0.2 (/opt/ros/humble/share/ackermann_msgs/cmake)
+[0.204s] -- Configuring done
+[0.205s] -- Generating done
+[0.206s] -- Build files have been written to: /home/zech/ros2_ws/build/eclipse_ackermann
+[0.224s] Invoked command in '/home/zech/ros2_ws/build/eclipse_ackermann' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/zech/ros2_ws/build/eclipse_ackermann -- -j20 -l20
+[0.232s] Invoking command in '/home/zech/ros2_ws/build/eclipse_ackermann': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/zech/ros2_ws/build/eclipse_ackermann
+[0.239s] -- Install configuration: ""
+[0.239s] -- Up-to-date: /home/zech/ros2_ws/install/eclipse_ackermann/share/eclipse_ackermann/launch
+[0.239s] -- Installing: /home/zech/ros2_ws/install/eclipse_ackermann/share/eclipse_ackermann/launch/sim.launch.py
+[0.239s] -- Up-to-date: /home/zech/ros2_ws/install/eclipse_ackermann/share/eclipse_ackermann/urdf
+[0.239s] -- Installing: /home/zech/ros2_ws/install/eclipse_ackermann/share/eclipse_ackermann/urdf/eclipse_ackermann.urdf.xacro
+[0.239s] -- Up-to-date: /home/zech/ros2_ws/install/eclipse_ackermann/share/eclipse_ackermann/config
+[0.239s] -- Up-to-date: /home/zech/ros2_ws/install/eclipse_ackermann/share/eclipse_ackermann/worlds
+[0.240s] -- Up-to-date: /home/zech/ros2_ws/install/eclipse_ackermann/share/eclipse_ackermann/worlds/empty.world.sdf
+[0.240s] -- Up-to-date: /home/zech/ros2_ws/install/eclipse_ackermann/lib/eclipse_ackermann/pure_pursuit_ackermann.py
+[0.240s] -- Installing: /home/zech/ros2_ws/install/eclipse_ackermann/lib/eclipse_ackermann/pose_to_odom.py
+[0.240s] -- Up-to-date: /home/zech/ros2_ws/install/eclipse_ackermann/share/ament_index/resource_index/package_run_dependencies/eclipse_ackermann
+[0.240s] -- Installing: /home/zech/ros2_ws/install/eclipse_ackermann/share/ament_index/resource_index/parent_prefix_path/eclipse_ackermann
+[0.240s] -- Up-to-date: /home/zech/ros2_ws/install/eclipse_ackermann/share/eclipse_ackermann/environment/ament_prefix_path.sh
+[0.240s] -- Installing: /home/zech/ros2_ws/install/eclipse_ackermann/share/eclipse_ackermann/environment/ament_prefix_path.dsv
+[0.240s] -- Up-to-date: /home/zech/ros2_ws/install/eclipse_ackermann/share/eclipse_ackermann/environment/path.sh
+[0.240s] -- Installing: /home/zech/ros2_ws/install/eclipse_ackermann/share/eclipse_ackermann/environment/path.dsv
+[0.240s] -- Up-to-date: /home/zech/ros2_ws/install/eclipse_ackermann/share/eclipse_ackermann/local_setup.bash
+[0.240s] -- Up-to-date: /home/zech/ros2_ws/install/eclipse_ackermann/share/eclipse_ackermann/local_setup.sh
+[0.240s] -- Up-to-date: /home/zech/ros2_ws/install/eclipse_ackermann/share/eclipse_ackermann/local_setup.zsh
+[0.240s] -- Installing: /home/zech/ros2_ws/install/eclipse_ackermann/share/eclipse_ackermann/local_setup.dsv
+[0.240s] -- Installing: /home/zech/ros2_ws/install/eclipse_ackermann/share/eclipse_ackermann/package.dsv
+[0.240s] -- Up-to-date: /home/zech/ros2_ws/install/eclipse_ackermann/share/ament_index/resource_index/packages/eclipse_ackermann
+[0.240s] -- Up-to-date: /home/zech/ros2_ws/install/eclipse_ackermann/share/eclipse_ackermann/cmake/eclipse_ackermannConfig.cmake
+[0.241s] -- Up-to-date: /home/zech/ros2_ws/install/eclipse_ackermann/share/eclipse_ackermann/cmake/eclipse_ackermannConfig-version.cmake
+[0.241s] -- Up-to-date: /home/zech/ros2_ws/install/eclipse_ackermann/share/eclipse_ackermann/package.xml
+[0.242s] Invoked command in '/home/zech/ros2_ws/build/eclipse_ackermann' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/zech/ros2_ws/build/eclipse_ackermann
